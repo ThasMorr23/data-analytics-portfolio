@@ -1,0 +1,46 @@
+CREATE TABLE IncCens ( 
+
+    id INT, 
+    State_Code VARCHAR(2), 
+    State_Name VARCHAR(255), 
+    State_ab VARCHAR(2), 
+    County VARCHAR(255), 
+    City VARCHAR(255), 
+    Place VARCHAR(255), 
+    Type VARCHAR(255), 
+    Primary_Type VARCHAR(255), 
+    Zip_Code VARCHAR(10), 
+    Area_Code INT, 
+    ALand INT, 
+    AWater INT, 
+    Lat FLOAT, 
+    Lon FLOAT, 
+    Mean INT, 
+    Median INT, 
+    Stdev INT, 
+    sum_w FLOAT 
+);
+
+SELECT state_ab,
+       mean,
+       Row_Number() OVER (ORDER BY mean DESC) AS state_means,
+       Rank() OVER (ORDER BY mean DESC) AS state_rank
+FROM inccens
+ORDER BY state_name DESC;
+
+CREATE TABLE aggregated_data_ab AS
+SELECT
+    state_ab,
+    AVG(mean) AS aggregated_mean,
+    Row_Number() OVER (ORDER BY AVG(mean) DESC) AS state_means,
+    RANK() OVER (ORDER BY AVG(mean) DESC) AS state_rank
+FROM inccens
+GROUP BY state_ab
+ORDER BY state_ab DESC;
+
+UPDATE aggregated_data
+SET aggregated_mean = ROUND(aggregated_mean);
+
+SELECT aggregated_mean
+FROM aggregated_data
+LIMIT 5;
