@@ -112,10 +112,26 @@ Sentiment analysis can help organizations:
 
 ## Project Files
 
-- `analysis.ipynb` → Full code and modeling workflow  
+- `sentiment-analysis.ipynb` → Full code and modeling workflow  
 - `project-summary.docx` → Detailed written analysis  
 - `data/` → Raw and prepared datasets  
 - `images/` → Training and evaluation visuals  
+
+---
+
+Notebook
+
+The full analysis is available in:
+
+- `sentiment-analysis.ipynb`
+
+This notebook includes:
+- Data preprocessing and cleaning  
+- Tokenization and sequence preparation  
+- Neural network model construction  
+- Training and evaluation  
+
+The project is fully reproducible using the provided dataset.
 
 ---
 
