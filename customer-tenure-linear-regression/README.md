@@ -123,6 +123,17 @@ Although the model did not produce strong predictive results, the findings are s
 
 ---
 
+## What I Would Do Next
+
+Given the weak predictive performance of this model, the next steps would include:
+
+- Exploring alternative target variables such as customer churn  
+- Incorporating behavioral features (e.g., service usage, interactions)  
+- Testing non-linear models to capture more complex relationships  
+- Performing feature engineering to improve predictive power
+  
+---
+
 ## Future Improvements
 
 - Explore alternative target variables (e.g., churn instead of tenure)  
