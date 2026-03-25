@@ -1,5 +1,3 @@
-# KMEANS Clustering on Medical Data
-
 # K-Means Clustering Analysis (Medical Dataset)
 
 ## Overview
