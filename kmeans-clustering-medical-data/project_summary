@@ -1,0 +1,106 @@
+# K-Means Clustering Analysis (Healthcare Dataset)
+
+## Overview
+This project applies K-means clustering to explore relationships between patient income and key healthcare variables, including vitamin D levels, total charges, and initial hospital stay duration.
+
+The goal was to identify natural groupings within the data and evaluate whether income is associated with differences in healthcare utilization and cost.
+
+---
+
+##  Objective
+- Identify distinct patient clusters based on medical and financial variables  
+- Determine the optimal number of clusters using evaluation metrics  
+- Analyze how income relates to healthcare patterns such as charges and length of stay  
+
+---
+
+##  Tools & Technologies
+- Python  
+- Pandas, NumPy  
+- scikit-learn  
+- Matplotlib, Seaborn  
+
+---
+
+## Data Preparation
+- Selected relevant variables: income, vitamin D levels, total charges, and initial days  
+- Checked for missing and duplicate values  
+- Standardized features to ensure equal contribution to clustering  
+
+---
+
+## Methodology
+
+### Determining Optimal Clusters
+
+#### Elbow Method
+![Elbow Method](images/elbow-method.png)
+
+The elbow method was used to evaluate inertia across different cluster values. The curve indicated that **2 clusters** was the optimal choice.
+
+---
+
+#### Silhouette Score
+![Silhouette Score](images/silhouette-score.png)
+
+Silhouette analysis supported the selection of 2 clusters, with a score of approximately **0.27**, indicating moderate cluster separation.
+
+---
+
+## Clustering Results
+
+### Cluster Visualization
+![Cluster Visualization1](images/cluster-visualization1.png)
+![Cluster Visualization2](images/cluster-visualization2.png)
+![Cluster Visualization3](images/cluster-visualization3.png)
+
+The K-means model identified **two distinct clusters** within the dataset. The clusters were evenly distributed, with approximately equal numbers of observations in each group. :contentReference[oaicite:0]{index=0}
+
+---
+
+## Key Insights
+
+- Two distinct patient groups were identified using K-means clustering  
+- The inertia value (~7354) indicates relatively compact clusters :contentReference[oaicite:1]{index=1}  
+- A silhouette score of ~0.27 suggests moderate separation between clusters :contentReference[oaicite:2]{index=2}  
+- Some overlap exists between clusters, indicating potential for improved modeling  
+
+---
+
+## Business Relevance
+
+Understanding how income relates to healthcare utilization can help organizations:
+
+- Identify high-cost patient segments  
+- Improve resource allocation strategies  
+- Develop targeted care or intervention programs  
+- Better understand patterns in patient outcomes  
+
+---
+
+## Limitations
+
+- K-means assumes spherical clusters with equal variance, which may not reflect real-world data  
+- Moderate silhouette score suggests some ambiguity in cluster separation  
+- Results may vary with different feature selection or scaling approaches :contentReference[oaicite:3]{index=3}  
+
+---
+
+## Future Improvements
+
+- Apply dimensionality reduction (PCA) to improve clustering performance  
+- Explore alternative clustering methods (hierarchical clustering, DBSCAN)  
+- Incorporate additional features to enhance cluster differentiation :contentReference[oaicite:4]{index=4}  
+
+---
+
+## Project Files
+
+- `project-summary.pdf` → Full written analysis  
+- `images/` → Visual outputs from clustering evaluation and results  
+
+---
+
+## Key Takeaway
+
+This analysis demonstrates how unsupervised learning techniques like K-means clustering can uncover meaningful patterns in healthcare data, even when relationships are not explicitly defined.
