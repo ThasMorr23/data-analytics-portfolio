@@ -1,140 +1,94 @@
-# Amazon Review Sentiment Analysis (RNN)
+# Sentiment Analysis of Amazon Product Reviews
 
-## Overview
-This project uses natural language processing (NLP) and a recurrent neural network (RNN) to classify Amazon product reviews as positive or negative. The goal was to determine whether customer sentiment can be accurately predicted from review text.
+##  Overview
+This project builds a machine learning model to classify Amazon product reviews as **positive or negative** using natural language processing (NLP) and a neural network implemented in TensorFlow/Keras.
 
----
-
-## Objective
-- Classify customer reviews as positive or negative  
-- Build and train a neural network model for text classification  
-- Evaluate model performance on unseen data  
+The project demonstrates an end-to-end workflow including data cleaning, text preprocessing, model development, evaluation, and a simulated real-world deployment scenario.
 
 ---
 
-## Tools & Technologies
-- Python  
-- TensorFlow / Keras  
-- Pandas, NumPy  
-- scikit-learn  
+##  Objective
+Customer reviews contain valuable insights, but analyzing them at scale is challenging. The goal of this project is to develop a model that can automatically classify review sentiment, enabling businesses to monitor customer feedback and make data-driven decisions.
 
 ---
 
-## Dataset
-
-The dataset consists of Amazon product reviews labeled as:
-
-- **1 = Positive sentiment**  
-- **0 = Negative sentiment**  
-
-Example:
-  "Great product!" → 1
-  "Waste of money." → 0
-
-
-The model was trained on **2,731 labeled reviews**. :contentReference[oaicite:1]{index=1}  
+##  Tools & Technologies
+- Python
+- Pandas, NumPy
+- TensorFlow / Keras
+- Scikit-learn
+- Matplotlib
 
 ---
 
-## Data Preparation
-
-- Removed special characters and noise  
-- Removed stop words  
-- Tokenized text into sequences  
-- Converted words into numerical representations  
-- Applied padding to standardize input length  
-- Split data into training (80%) and testing (20%) sets  
+##  Dataset
+The dataset consists of labeled product reviews, where each review is classified as either positive or negative. Multiple datasets were combined into a single dataset for analysis.
 
 ---
 
-## Model Architecture
+##  Methodology
 
-The neural network includes:
+### Data Preparation
+- Removed duplicates and missing values  
+- Normalized text (lowercasing, removing punctuation and extra spaces)  
+- Tokenized text into numerical sequences  
+- Applied sequence padding to standardize input length  
 
-- Embedding layer (text representation)  
-- MaxPooling layer  
-- Dense layers  
-- Dropout layer (to reduce overfitting)  
-- Sigmoid output layer for binary classification  
+### Model Development
+- Neural network with:
+  - Embedding layer for text representation  
+  - Global average pooling  
+  - Dense hidden layer with ReLU activation  
+  - Batch normalization and dropout for regularization  
+  - Sigmoid output for binary classification  
 
-Total parameters: ~1.6 million :contentReference[oaicite:2]{index=2}  
-
----
-
-## Model Performance
-
-- **Training Accuracy:** 99.86%  
-- **Test Accuracy:** 81.72%  
-- **Loss (test):** 0.5324  
-
-:contentReference[oaicite:3]{index=3}  
-
----
-
-## Key Insights
-
-- The model successfully learns patterns in customer sentiment  
-- Strong training accuracy indicates effective learning  
-- Lower test accuracy suggests some overfitting  
-- The model generalizes reasonably well to new data  
+### Training
+- Train/test split with stratification  
+- Early stopping to prevent overfitting  
+- Model evaluated on unseen test data  
 
 ---
 
-## Business Relevance
+##  Results
+- **Test Accuracy: ~78%**
 
-Sentiment analysis can help organizations:
-
-- Understand customer satisfaction at scale  
-- Identify negative feedback trends quickly  
-- Improve products based on user sentiment  
-- Enhance customer experience  
+The model successfully captures sentiment patterns in review text. While slightly lower than earlier experimental results (~81%), this version was selected because it balances performance with a clean, reproducible, and interpretable pipeline suitable for real-world use.
 
 ---
 
-## Limitations
+##  Simulated Real-World Deployment
 
-- Model shows signs of overfitting (train vs test gap)  
-- Dataset size is relatively small  
-- Limited vocabulary may restrict performance  
+To demonstrate how this model would function in production, a simulated pipeline was created:
 
-:contentReference[oaicite:4]{index=4}  
+1. New customer reviews are processed by the model  
+2. Each review is classified as positive or negative  
+3. Predictions are aggregated to calculate sentiment distribution  
+4. Results are visualized to identify trends  
 
----
-
-## Future Improvements
-
-- Increase dataset size for better generalization  
-- Tune hyperparameters (epochs, dropout, layers)  
-- Explore advanced models (LSTM, transformers)  
-- Improve text preprocessing and feature engineering  
+This reflects how companies monitor customer sentiment at scale.
 
 ---
 
-## Project Files
+##  Business Applications
 
-- `sentiment-analysis.ipynb` → Full code and modeling workflow  
-- `project-summary.docx` → Detailed written analysis  
-- `data/` → Raw and prepared datasets  
-- `images/` → Training and evaluation visuals  
+This model can be used to:
 
----
-
-Notebook
-
-The full analysis is available in:
-
-- `sentiment-analysis.ipynb`
-
-This notebook includes:
-- Data preprocessing and cleaning  
-- Tokenization and sequence preparation  
-- Neural network model construction  
-- Training and evaluation  
-
-The project is fully reproducible using the provided dataset.
+- Monitor customer sentiment in real time  
+- Identify trends in product satisfaction  
+- Detect spikes in negative feedback  
+- Support product, marketing, and customer experience decisions  
 
 ---
 
-## Key Takeaway
+##  Future Improvements
 
-This project demonstrates how deep learning and NLP techniques can be used to extract meaningful insights from unstructured text data, enabling scalable analysis of customer sentiment.
+- Tune hyperparameters to improve accuracy  
+- Compare with baseline models (e.g., logistic regression)  
+- Implement more advanced architectures (LSTM, GRU, transformers)  
+- Expand dataset for better generalization  
+- Deploy as an automated pipeline connected to a live data source  
+
+---
+
+## 📁 Project Structure
+
