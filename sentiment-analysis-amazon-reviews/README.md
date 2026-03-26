@@ -91,4 +91,15 @@ This model can be used to:
 ---
 
 ## 📁 Project Structure
+sentiment-analysis-amazon-reviews/
+├── README.md
+├── analysis.ipynb
+├── project-summary.docx
+├── images/
 
+
+---
+
+## 👩‍💻 Author
+Thasanee Morrissey  
+Data Analytics | Education | Data-Driven Decision Making
