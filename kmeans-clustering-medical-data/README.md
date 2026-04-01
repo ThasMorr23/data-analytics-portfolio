@@ -1,7 +1,7 @@
 # K-Means Clustering Analysis (Medical Dataset)
 
 ## Overview
-This project applies K-means clustering to a medical dataset to identify patterns and group similar observations based on shared characteristics.
+This project applies K-means clustering to a medical dataset (10,000 records) to identify patterns and group similar observations based on shared characteristics.
 
 ---
 
