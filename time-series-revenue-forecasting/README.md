@@ -113,6 +113,6 @@ Time series forecasting can help organizations:
 
 ---
 
-## 🧠 Key Takeaway
+## Key Takeaway
 
 This project demonstrates how time series modeling can transform historical data into actionable forecasts, enabling organizations to make proactive, data-driven decisions.
