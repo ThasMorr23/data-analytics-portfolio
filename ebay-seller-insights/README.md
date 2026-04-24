@@ -84,7 +84,7 @@ The Tableau dashboard provides an interactive view of:
 - Item-level pricing insights
 ![Dashboard](tableau/dashboard_screenshot.png)
 
-  ## Key Insights
+## Key Insights
 
 - Revenue is concentrated in a small number of higher-priced items
 - Certain states consistently generate higher sales volume
