@@ -28,7 +28,7 @@ This project addresses these challenges by building a structured data pipeline a
 - SQL – data analysis
 - Tableau – dashboard visualization
 
-- ## Data Cleaning & Preparation
+## Data Cleaning & Preparation
 
 Key data challenges addressed:
 
